@@ -1,0 +1,138 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "express-api-starter",
+    "dateExported": "2023-04-29T03:14:22.240Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "a041edcb-22c8-454a-90fd-7d0711e2c7aa",
+            "name": "Auth",
+            "containerId": "",
+            "created": "2023-04-29T03:13:31.050Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "9a68eb5b-b06c-4f00-8d3d-dda2eec65099",
+            "name": "Users",
+            "containerId": "",
+            "created": "2023-04-29T03:13:10.747Z",
+            "sortNum": 30000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "32990062-9da3-4ab6-b494-93c3bf0b61a6",
+            "colId": "086dcbbc-4179-4d0c-b52e-cf4f2492a711",
+            "containerId": "a041edcb-22c8-454a-90fd-7d0711e2c7aa",
+            "name": "Register New User",
+            "url": "http://localhost:3000/api/v1/auth/register",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-04-27T21:41:56.734Z",
+            "modified": "2023-04-29T03:13:34.961Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"first_name\": \"first_name\",\n  \"last_name\": \"last_name\",\n  \"email\": \"email@email.email\",\n  \"password\": \"password\",\n  \"password_confirmation\": \"password\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "03b9f17e-8cb6-49ec-a5b5-5923675c258a",
+            "colId": "086dcbbc-4179-4d0c-b52e-cf4f2492a711",
+            "containerId": "9a68eb5b-b06c-4f00-8d3d-dda2eec65099",
+            "name": "Get User",
+            "url": "http://localhost:3000/api/v1/user/644c8141d4937945605e416",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-04-27T21:45:09.215Z",
+            "modified": "2023-04-29T03:13:14.434Z",
+            "headers": [
+                {
+                    "name": "Accept-Language",
+                    "value": "ar"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "df64a2dc-cfb5-452c-aae9-ea37ddaf4d1e",
+            "colId": "086dcbbc-4179-4d0c-b52e-cf4f2492a711",
+            "containerId": "a041edcb-22c8-454a-90fd-7d0711e2c7aa",
+            "name": "User Verify Email",
+            "url": "http://localhost:3000/api/v1/auth/verify-email",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-04-28T00:49:59.561Z",
+            "modified": "2023-04-29T03:13:36.449Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"email\": \"email@email.email\",\n    \"password\" : \"password\",\n    \"verification_code\" : \"140523\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "23543df1-cd86-48f5-9814-be6912164a02",
+            "colId": "086dcbbc-4179-4d0c-b52e-cf4f2492a711",
+            "containerId": "a041edcb-22c8-454a-90fd-7d0711e2c7aa",
+            "name": "Login",
+            "url": "http://localhost:3000/api/v1/auth/login",
+            "method": "POST",
+            "sortNum": 25000,
+            "created": "2023-04-28T01:05:07.728Z",
+            "modified": "2023-04-29T03:13:55.961Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"email\": \"email@email.email\",\n    \"password\" : \"password\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "b8bf6e79-c7c5-4309-8243-46aadfd11722",
+            "colId": "086dcbbc-4179-4d0c-b52e-cf4f2492a711",
+            "containerId": "a041edcb-22c8-454a-90fd-7d0711e2c7aa",
+            "name": "Request Reset Password",
+            "url": "http://localhost:3000/api/v1/auth/request-reset-password",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2023-04-28T01:44:12.026Z",
+            "modified": "2023-04-29T03:13:38.417Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"email\": \"email@email.email\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "d815e4f6-91cd-4fbd-8de6-f50567d03c71",
+            "colId": "086dcbbc-4179-4d0c-b52e-cf4f2492a711",
+            "containerId": "a041edcb-22c8-454a-90fd-7d0711e2c7aa",
+            "name": "Reset Password",
+            "url": "http://localhost:3000/api/v1/auth/reset-password",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2023-04-28T01:52:56.487Z",
+            "modified": "2023-04-29T03:13:41.297Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"email\": \"email@email.email\",\n    \"verification_code\": \"932187\",\n    \"new_password\": \"newPassword\",\n    \"confirm_new_password\": \"newPassword\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}
