@@ -5,7 +5,15 @@ export default function validateRequest(req: Request, res: Response, next: NextF
     const errors =  validationResult(req);
     
     if(!errors.isEmpty()){
-        return res.status(400).json({errors : errors.array()});
+        const errorsList = errors.array();
+
+        return res.status(400).json({
+            success: false,
+            code: 'request_validation',
+            message: errorsList[0].msg || 'Request validation failed',
+            error: errorsList[0] ?? [],
+            errors: errorsList,
+        });
     }
 
     next();

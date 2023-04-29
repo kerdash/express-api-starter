@@ -4,7 +4,7 @@ import jwt from 'jsonwebtoken';
 
 import jwtConfig from '../config/jwt';
 
-import Suc from '../utils/suc';
+import Suc from '../utils/successResponse';
 import Err from '../exceptions/err';
 
 import verifyEmail from '../emails/verifyEmail';
@@ -59,8 +59,13 @@ export default {
       throw Err.notAcceptable("Please verify your email before logging in", "verify_email");
     }
 
-    // Create token
-    const token = jwt.sign({ user_id: user._id, email }, jwtConfig.tokenKey, { expiresIn: jwtConfig.expiresIn });
+    // JWT token
+    const tokenExpiresIn = parseInt(jwtConfig.expiresIn);
+    const token = jwt.sign({ user_id: user._id, email }, jwtConfig.tokenKey, { expiresIn: tokenExpiresIn });
+    res.cookie('x-access-token', token, {
+      httpOnly: true,
+      maxAge: tokenExpiresIn
+    })
 
     // Return user and token
     return Suc.ok(res, { user, token });

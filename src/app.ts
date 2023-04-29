@@ -11,6 +11,7 @@ import cors = require('cors')
 import morgan = require('morgan')
 import helmet from "helmet";
 import I18n = require("i18n");
+import cookieParser = require('cookie-parser')
 
 // Import application configuration
 import appConfig from './config/app';
@@ -21,6 +22,10 @@ import errorHandler from './services/errorHandler';
 
 // Create Express app
 const app = express();
+
+// Configure app to use cookie-parser middleware
+app.use(cookieParser());
+app.use(cors( {credentials: true, origin: '*'} ));
 
 // Configure app to use body parser middleware
 app.use(express.json());

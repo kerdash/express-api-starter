@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 
 import User from '../models/user';
 
-import Suc from '../utils/suc';
+import Suc from '../utils/successResponse';
 import Err from '../exceptions/err';
 
 export default {

@@ -215,7 +215,7 @@ class Err extends Error {
     }
 
     // Throw error
-    static throw(statusCode: number, message: string, code: string) {
+    static send(statusCode: number, message: string, code: string) {
         return new Err(message, statusCode, code);
     }
 }
